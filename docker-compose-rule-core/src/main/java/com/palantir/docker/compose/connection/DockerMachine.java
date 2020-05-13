@@ -113,7 +113,7 @@ public class DockerMachine implements DockerConfiguration {
         return new RemoteBuilder();
     }
 
-    public static class RemoteBuilder {
+    public static final class RemoteBuilder {
 
         private final Map<String, String> dockerEnvironment = newHashMap();
         private Map<String, String> additionalEnvironment = newHashMap();

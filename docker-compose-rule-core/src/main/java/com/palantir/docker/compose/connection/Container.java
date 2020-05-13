@@ -33,7 +33,7 @@ public class Container {
     private final Docker docker;
     private final DockerCompose dockerCompose;
 
-    private Supplier<Ports> portMappings = Suppliers.memoize(this::getDockerPorts)::get;
+    private Supplier<Ports> portMappings = Suppliers.memoize(this::getDockerPorts);
 
     public Container(String containerName, Docker docker, DockerCompose dockerCompose) {
         this.containerName = containerName;
@@ -94,7 +94,7 @@ public class Container {
 
     public void start() throws IOException, InterruptedException {
         dockerCompose.start(this);
-        portMappings = Suppliers.memoize(this::getDockerPorts)::get;
+        portMappings = Suppliers.memoize(this::getDockerPorts);
     }
 
     public void stop() throws IOException, InterruptedException {

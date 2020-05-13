@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.Matchers.anyVararg;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
@@ -66,7 +66,7 @@ public class CommandShould {
     not_invoke_error_handler_when_exit_code_of_the_executed_process_is_0() throws IOException, InterruptedException {
         dockerComposeCommand.execute(errorHandler, "rm", "-f");
 
-        verifyZeroInteractions(errorHandler);
+        verifyNoMoreInteractions(errorHandler);
     }
 
     @Test public void

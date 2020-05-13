@@ -30,7 +30,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RemoteEnvironmentValidator implements EnvironmentValidator {
+public final class RemoteEnvironmentValidator implements EnvironmentValidator {
 
     private static final Set<String> SECURE_VARIABLES = ImmutableSet.of(DOCKER_TLS_VERIFY, DOCKER_CERT_PATH);
     private static final RemoteEnvironmentValidator VALIDATOR = new RemoteEnvironmentValidator();
